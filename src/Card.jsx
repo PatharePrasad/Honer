@@ -1,12 +1,18 @@
-function Card (){
-    return <div className="card">
-        <img src="https://placehold.co/100" />
-        <h1>Heading {2 + 2}</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam.
-        </p>
-        <button>click me</button>
-    </div>
+function Card({imgLink, name, description, btn, action = () => console.log("Clicked")}){
+
+
+    const heading = {
+        color: "red",
+        fontWeight: "bold"
+    }
+    return (
+        <div className="card">
+            <img src={imgLink}/>
+            <h1 style={heading}>{name}</h1>
+            <p>{description}</p>
+            <button onClick={action}>{btn}</button>
+        </div>
+    );
 }
 
 export default Card;
